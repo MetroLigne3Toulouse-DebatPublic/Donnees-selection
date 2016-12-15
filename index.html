@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>M3T</title>
+    <link rel="stylesheet" href="M3T_fichiers/bootstrap.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="M3T_fichiers/font-awesome.css">
+    <link rel="stylesheet" href="M3T_fichiers/images-grid.css" type="text/css" media="screen">
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl as $ctrl" class="ng-scope">
+
+    <div class="control-container alert text-center">
+        <!-- ngRepeat: tag in $ctrl.tags --><a ng-repeat="tag in $ctrl.tags" class="btn btn-lg ng-binding ng-scope active btn-transport" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            Transport/mobilité (24)
+        </a><!-- end ngRepeat: tag in $ctrl.tags --><a ng-repeat="tag in $ctrl.tags" class="btn btn-lg ng-binding ng-scope active btn-urbanisme" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            Urbanisme/socio-économie (3)
+        </a><!-- end ngRepeat: tag in $ctrl.tags --><a ng-repeat="tag in $ctrl.tags" class="btn btn-lg ng-binding ng-scope active btn-environnement" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            Environnement, paysage et patrimoine (11)
+        </a><!-- end ngRepeat: tag in $ctrl.tags --><a ng-repeat="tag in $ctrl.tags" class="btn btn-lg ng-binding ng-scope active btn-propositions" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            Propositions du public (2)
+        </a><!-- end ngRepeat: tag in $ctrl.tags -->
+    </div>
+    <div class="photos-container">
+        <!-- ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map" style="">
+            <img ng-src="https://c3.staticflickr.com/6/5740/30390979106_78a294622b_z.jpg" alt="" src="M3T_fichiers/30390979106_78a294622b_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements domicile-travail en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c5.staticflickr.com/6/5342/30102996196_b7930c4fac_z.jpg" alt="" src="M3T_fichiers/30102996196_b7930c4fac_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements domicile-travail en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c6.staticflickr.com/8/7509/30053671261_8f26eace30_k.jpg" alt="" src="M3T_fichiers/30053671261_8f26eace30_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacement des actifs
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/6/5749/30023518742_40683feaa7_z.jpg" alt="" src="M3T_fichiers/30023518742_40683feaa7_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Colomiers en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/8/7502/30102993166_01c4927011_k.jpg" alt="" src="M3T_fichiers/30102993166_01c4927011_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Blagnac en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c8.staticflickr.com/9/8414/30427108295_58d7ed3b9c_k.jpg" alt="" src="M3T_fichiers/30427108295_58d7ed3b9c_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Toulouse en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/9/8420/29795423073_4e30eb2cc5_k.jpg" alt="" src="M3T_fichiers/29795423073_4e30eb2cc5_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de St-Orens-de-Gameville en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/6/5692/30130059950_58d209ce48_k.jpg" alt="" src="M3T_fichiers/30130059950_58d209ce48_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Labège en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5738/30390991786_cab1321b11_k.jpg" alt="" src="M3T_fichiers/30390991786_cab1321b11_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Cugnaux en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c1.staticflickr.com/6/5538/30390988256_d80ca4d629_k.jpg" alt="" src="M3T_fichiers/30390988256_d80ca4d629_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Plaisance-du-Touch en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c6.staticflickr.com/9/8560/29795420453_a316fafc04_z.jpg" alt="" src="M3T_fichiers/29795420453_a316fafc04_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Déplacements principaux de Tournefeuille en 2013
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5591/30802965146_4f3a04d863_k.jpg" alt="" src="M3T_fichiers/30802965146_4f3a04d863_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Colomiers Centre
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c5.staticflickr.com/6/5816/30538657900_7b10226129_k.jpg" alt="" src="M3T_fichiers/30538657900_7b10226129_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Borderouge
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c8.staticflickr.com/6/5622/30204392623_923bfe8e89_k.jpg" alt="" src="M3T_fichiers/30204392623_923bfe8e89_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Tournefeuille
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/6/5665/30538645990_22245283fe_k.jpg" alt="" src="M3T_fichiers/30538645990_22245283fe_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Saint-Martin-du-Touch
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/6/5755/30204385833_bd09f72927_k.jpg" alt="" src="M3T_fichiers/30204385833_bd09f72927_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Cornebarrieu
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c4.staticflickr.com/6/5498/30751658011_71b7810b70_k.jpg" alt="" src="M3T_fichiers/30751658011_71b7810b70_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Colomiers ZA
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c5.staticflickr.com/6/5676/30723015612_bd2830d307_k.jpg" alt="" src="M3T_fichiers/30723015612_bd2830d307_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Blagnac
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/6/5712/30839573225_465fc2595f_k.jpg" alt="" src="M3T_fichiers/30839573225_465fc2595f_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants des Minimes 
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5546/30802951986_638b70d4c6_k.jpg" alt="" src="M3T_fichiers/30802951986_638b70d4c6_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Lalande
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c4.staticflickr.com/6/5634/30204369323_4d86c18727_k.jpg" alt="" src="M3T_fichiers/30204369323_4d86c18727_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants de Fondeyre
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c1.staticflickr.com/6/5586/30802942776_53e572e809_k.jpg" alt="" src="M3T_fichiers/30802942776_53e572e809_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Secteurs de déplacements des habitants du secteur d'Escalquens
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5250/30103017066_a97cb3931f_k.jpg" alt="" src="M3T_fichiers/30103017066_a97cb3931f_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Installations existantes pour les déplacement en vélo sur Toulouse
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5518/30391002026_3ce59e3cb6_k.jpg" alt="" src="M3T_fichiers/30391002026_3ce59e3cb6_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-transport" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Accès vers la clinique Croix du Sud à Quint-Fonsegrives
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c8.staticflickr.com/6/5473/29358613943_57a8334b1b_b.jpg" alt="" src="M3T_fichiers/29358613943_57a8334b1b_b.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-urbanisme" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Densité de population par catégorie socio-professionnelle
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/6/5817/30204359713_007140bd29_k.jpg" alt="" src="M3T_fichiers/30204359713_007140bd29_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-urbanisme" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Desserte des quartiers prioritaires par les transports en commun
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/6/5150/29691369750_61bc49292d_b.jpg" alt="" src="M3T_fichiers/29691369750_61bc49292d_b.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-urbanisme" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Densité de population par tranche d'âge
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c1.staticflickr.com/6/5080/29509697544_26f72be829_k.jpg" alt="" src="M3T_fichiers/29509697544_26f72be829_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Zones d'enjeux patrimoniaux / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c6.staticflickr.com/9/8547/29795416973_8dd1c12ef2_k.jpg" alt="" src="M3T_fichiers/29795416973_8dd1c12ef2_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Zones d'enjeux patrimoniaux / Labège / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c4.staticflickr.com/9/8418/30340681931_8be34f5d84_k.jpg" alt="" src="M3T_fichiers/30340681931_8be34f5d84_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Sites classés centrés sur le centre de Toulouse
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c4.staticflickr.com/6/5122/30137902515_9fceb37947_k.jpg" alt="" src="M3T_fichiers/30137902515_9fceb37947_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Zones humides / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c5.staticflickr.com/6/5088/30023510092_a7d0baa0d6_k.jpg" alt="" src="M3T_fichiers/30023510092_a7d0baa0d6_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Zones humides / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c1.staticflickr.com/6/5679/30130069560_2273d902b4_k.jpg" alt="" src="M3T_fichiers/30130069560_2273d902b4_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Risques naturels / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/6/5598/29509141513_1907fbd4d1_k.jpg" alt="" src="M3T_fichiers/29509141513_1907fbd4d1_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Sites Seveso et ICPE / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c3.staticflickr.com/6/5211/30102980266_2afa5cd455_k.jpg" alt="" src="M3T_fichiers/30102980266_2afa5cd455_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Sites Seveso et ICPE au Nord de Toulouse / 3ème ligne de métro
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/6/5636/30207860614_bbd12c1696_z.jpg" alt="" src="M3T_fichiers/30207860614_bbd12c1696_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Interférences et enjeux aquatiques des réseaux d'eau naturels
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c2.staticflickr.com/6/5446/30204476393_22b503daba_z.jpg" alt="" src="M3T_fichiers/30204476393_22b503daba_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Parcelles agricoles dans l'agglomération toulousaine
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c6.staticflickr.com/6/5829/30204489213_6a115deddb_k.jpg" alt="" src="M3T_fichiers/30204489213_6a115deddb_k.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-environnement" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                ZNIEFF et ZICO
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c7.staticflickr.com/9/8410/30310932982_195c8965bd_z.jpg" alt="" src="M3T_fichiers/30310932982_195c8965bd_z.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-propositions" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Atelier de Labège 12/10 - Propositions du public
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps --><div class="photo-container ng-scope" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="https://c5.staticflickr.com/6/5579/30723722052_c8c2ae4ab4_h.jpg" alt="" src="M3T_fichiers/30723722052_c8c2ae4ab4_h.jpg">
+            <h3 class="title ng-binding">
+                <span class="map-tags">
+                    <!-- ngRepeat: tag in map.tags --><span ng-repeat="tag in map.tags" class="tag ng-scope tag-propositions" ng-class="'tag-' + tag">&nbsp;</span><!-- end ngRepeat: tag in map.tags -->
+                </span>
+                Atelier des Minimes 27/10 - Propositions du public
+            </h3>
+        </div><!-- end ngRepeat: map in $ctrl.maps -->
+    </div>
+    <div class="selected-map ng-hide" ng-show="$ctrl.selectedMap" ng-click="$ctrl.selectedMap = undefined">
+        <!-- <h3 class="title">{{ $ctrl.selectedMap.title }}</h3> -->
+        <img alt="">
+        <div class="extra-links">
+            <!-- ngIf: $ctrl.selectedMap.flickrUrl -->
+            <!-- ngIf: $ctrl.selectedMap.forumUrl -->
+        </div>
+    </div>
+    <script src="M3T_fichiers/jquery-3.js" crossorigin="anonymous"></script>
+    <script src="M3T_fichiers/bootstrap.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="M3T_fichiers/angular.js"></script>
+    <script type="text/javascript" src="M3T_fichiers/angular-animate.js"></script>
+
+    <script type="text/javascript" src="M3T_fichiers/images-grid.js"></script>
+
+
+
+</body></html>
